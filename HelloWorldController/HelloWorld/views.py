@@ -5,3 +5,6 @@ from django.http import HttpResponse
 
 def index(request):
     return HttpResponse('Hello World')
+
+def return_var_from_url(request, name):
+    return HttpResponse(name)
