@@ -7,7 +7,11 @@ from .models import NameFromUrl
 def index(request):
     return HttpResponse('Hello World')
 
-def return_var_from_url(request, name):
-    saver = NameFromUrl(variable=name)
+def saveNameToDb(string):
+    saver = NameFromUrl(variable=string)
     saver.save()
+
+
+def return_var_from_url(request, name):
+    saveNameToDb(name)
     return HttpResponse(name)
